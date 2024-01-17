@@ -4,11 +4,11 @@ Agraja es mi proyecto de final de Bootcamp Fullstack.
 
 ###### Características:
 
-- Agraja Backend es una API para una aplicación que permite la contratación de agricultores y la venta de cajas. 
+- Agraja Backend es una API para una aplicación que permite la contratación de agricultores y la venta de cajas de productos del campo. 
 
 - La API está construida con .NET Core 6.0 Web API y utiliza Jwt Bearer tokens para autenticación. 
 
-- Las contraseñas en las bases de datos están encriptadas con AES256. 
+- Las contraseñas se encriptan con AES256. 
 
 - Los agricultores pueden trabajar en cuatro tipos de campos: hortalizas, cereales, leguminosas y frutales. 
 
@@ -18,9 +18,9 @@ Agraja es mi proyecto de final de Bootcamp Fullstack.
 
 - Para el manejo de la aplicación existen dos tipos de perfiles: Administrador y Vendedor:
   
-  - El **vendedor** puede hacer contrataciones de agricultores y ventas de cajas, pero no puede añadir ni modificar agricultores o cajas. El **administrador** puede hacer contrataciones y ventas de cajas, pero además pueden modificar y añadir nuevas.
+  - El **vendedor** puede hacer contrataciones de agricultores y ventas de cajas, pero no puede añadir ni modificar agricultores o cajas. El **administrador** puede hacer contrataciones y ventas de cajas, pero además puede modificar y añadir nuevas.
 
-- La aplicación permite **MSSQL** o **MySQL** simplemente configurando `appsetings.json`. Para faciliar la implementación se añaden scripts de creación de base de datos en el directorio `scripts`. Si se prefiere tambíen se pueden crear migraciones con EF.
+- La aplicación permite **MSSQL** o **MySQL** simplemente configurando el archivo `appsetings.json`. Para faciliar la implementación se añaden scripts de creación de base de datos en el directorio `scripts`. Si se prefiere tambíen se pueden crear migraciones con EF.
 
 # Instalación
 
@@ -65,7 +65,7 @@ Se pueden reiniciar las credenciales configurando *"reset"* del objeto *"Users"*
 }
 ```
 
-¡Cuidado! si lo dejas en *true*, cada vez que arranque el proyecto, se reiniciarán.
+> ⚠️¡Cuidado! si lo dejas en *true*, cada vez que arranque el proyecto, se reiniciarán.
 
 
 
@@ -94,3 +94,9 @@ Configura CORS facilmente con tu dominio:
    "WithOrigins": "https://agraja-domain.com"
  },
 ```
+
+
+
+> Nota: El archivo de configuración contiene comentarios descriptivos de casi todos los campos.
+
+¡Gracias por visitar mi repositorio! ☺️
