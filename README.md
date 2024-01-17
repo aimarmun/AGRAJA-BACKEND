@@ -1,20 +1,96 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# AGRAJA-BACKEND: API para la contratación de agricultores y venta de cajas de productos
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Agraja es mi proyecto de final de Bootcamp Fullstack.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+###### Características:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Agraja Backend es una API para una aplicación que permite la contratación de agricultores y la venta de cajas. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- La API está construida con .NET Core 6.0 Web API y utiliza Jwt Bearer tokens para autenticación. 
+
+- Las contraseñas en las bases de datos están encriptadas con AES256. 
+
+- Los agricultores pueden trabajar en cuatro tipos de campos: hortalizas, cereales, leguminosas y frutales. 
+
+- Las cajas pueden ser de frutas, hortalizas, cereales o legumbres. 
+
+- También se permite la inserción y modificación de nuevos clientes. Estos clientes pueden contratar los servicios de los agricultores o pueden comprar cajas. 
+
+- Para el manejo de la aplicación existen dos tipos de perfiles: Administrador y Vendedor:
+  
+  - El **vendedor** puede hacer contrataciones de agricultores y ventas de cajas, pero no puede añadir ni modificar agricultores o cajas. El **administrador** puede hacer contrataciones y ventas de cajas, pero además pueden modificar y añadir nuevas.
+
+- La aplicación permite **MSSQL** o **MySQL** simplemente configurando `appsetings.json`. Para faciliar la implementación se añaden scripts de creación de base de datos en el directorio `scripts`. Si se prefiere tambíen se pueden crear migraciones con EF.
+
+# Instalación
+
+Para instalar y configurar el proyecto, sigue estos pasos:
+
+1. Instala .NET Core 6.0.
+2. Clona el repositorio de GitHub.
+3. Abre el proyecto en Visual Studio.
+4. Ejecuta el proyecto.
+
+# Uso
+
+Para utilizar esta API puedes elegir las siguientes alternativas:
+
+- Utiliza el frontend de agraja https://github.com/aimarmun/AGRAJA-FRONT
+
+- Utiliza Swagger  (se inicia en modo depuración y está documentado).
+
+- Utiliza Postman.
+
+- Curl
+
+- ...
+
+###### Ejemplos de uso:
+
+Obtener ciudades con curl:
+
+```bash
+curl -X 'GET' \
+  'http://localhost:5145/api/City' \
+  -H 'accept: */*'
+```
+
+###### Configuraciones:
+
+Se pueden reiniciar las credenciales configurando *"reset"* del objeto *"Users"* en true del archivo `appsetings.json`:
+
+```json
+"Users": {
+  "reset": false
+}
+```
+
+¡Cuidado! si lo dejas en *true*, cada vez que arranque el proyecto, se reiniciarán.
+
+
+
+Configura tu base de datos con Microsoft SQL Server o MySQL:
+
+```json
+  "DatabaseCore": {
+    "_comentario_core_": "Indica SQLSERVER para SQL Server o MYSQL para utilizar MySQL",
+    "core": "SQLSERVER"
+  },
+  "ConnectionStrings": {
+    "SQLconnectionString": "Server = localhost\\SQLEXPRESS; Database = Agraja; TrustServerCertificate=True; Integrated Security = true;",
+    "MYSQLconnectionString": "Server=<servidor>;Port=<puerto>;Database=<base_de_Datos>;Uid=<usuario>;Pwd=<contraseña>;"
+  },
+```
+
+
+
+Configura CORS facilmente con tu dominio:
+
+```json
+ "CORS": {
+   "AllowAnyHeader": true,
+   "AllowAnyMethod": true,
+   "AllowAnyOrigin": true,
+   "WithOrigins": "https://agraja-domain.com"
+ },
+```
