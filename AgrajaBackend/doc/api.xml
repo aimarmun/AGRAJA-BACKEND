@@ -1976,21 +1976,6 @@
             <param name="email"></param>
             <returns></returns>
         </member>
-        <member name="T:AgrajaBackend.Services.ConfigService">
-            <summary>
-            Servicio de configuración
-            </summary>
-        </member>
-        <member name="P:AgrajaBackend.Services.ConfigService.ConnectionString">
-            <summary>
-            Cadena de conexión a base de datos
-            </summary>
-        </member>
-        <member name="M:AgrajaBackend.Services.ConfigService.#ctor">
-            <summary>
-            Constructor del servicio.
-            </summary>
-        </member>
         <member name="T:AgrajaBackend.Services.Contracts.ICitiesService">
             <summary>
             Interface de ciudades
@@ -2078,16 +2063,6 @@
             Devuelve una matriz con todos los clientes.
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:AgrajaBackend.Services.Contracts.IConfigService">
-            <summary>
-            Interface de configService
-            </summary>
-        </member>
-        <member name="P:AgrajaBackend.Services.Contracts.IConfigService.ConnectionString">
-            <summary>
-            String de conexión a base de datos
-            </summary>
         </member>
         <member name="T:AgrajaBackend.Services.Contracts.ICratesService">
             <summary>
