@@ -1,0 +1,2819 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgrajaBackend</name>
+    </assembly>
+    <members>
+        <member name="T:AgrajaBackend.AppDbContext">
+            <summary>
+            Contexto de base de datos de la aplicación
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.Crates">
+            <summary>
+            Set de datos de cajas
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.Clients">
+            <summary>
+            Set de datos de clientes
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.Farmers">
+            <summary>
+            Set de datos de agricultores
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.PayOptions">
+            <summary>
+            Set de dato de opciones de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.CratesSales">
+            <summary>
+            Set de datos de compras de cajas
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.FarmerHirings">
+            <summary>
+            Set de datos de contrataciones de agricultores
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.CropTypes">
+            <summary>
+            Set de datos de tipos de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.Cities">
+            <summary>
+            Set de datos de ciudades
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.AppDbContext.Users">
+            <summary>
+            Set de usuarios que podrán manejar la aplicación
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.AppDbContext.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor de la clase
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.AppDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Método que se ejecuta al iniciar configuración de BBDD
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:AgrajaBackend.AppDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Permite terminar de configurar las propiedades de las tablas por fluent API
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:AgrajaBackend.Constants">
+            <summary>
+            Clase para manejar las constantes de la aplicación
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.PersonData">
+            <summary>
+            Constantes utilizadas en el modelo PeronData
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGTH_NAME">
+            <summary>
+            Máxima longitud del nombre
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGTH_SURNAMES">
+            <summary>
+            Máxima longitud de los apellidos
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGTH_ADDRESS">
+            <summary>
+            Máxima longitud para las direcciones
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGHT_DNI">
+            <summary>
+            Longitud de un DNI
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGHT_TELEPHONE">
+            <summary>
+            Máxima longitud para campo teléfono
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PersonData.MAX_LENGHT_EMAIL">
+            <summary>
+            Máxima longitud para correo
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Crate">
+            <summary>
+            Constantes para el modelo Crate
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Crate.MAX_LENGTH_NAME">
+            <summary>
+            Máxima longitud para el nombre de la caja
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Crate.MAX_LENGTH_DESCRIPTION">
+            <summary>
+            Máxima longitud para la descripción
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.CropType">
+            <summary>
+            Constantes para el modelo CropType
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.CropType.MAX_LENGTH_NAME">
+            <summary>
+            Máxima longitud para el nombre
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.CropType.MAX_LENGTH_DESCRIPTION">
+            <summary>
+            Máxima longitud para la descripción
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.CropType.Filters">
+            <summary>
+            Sublcase CropType para constantes de filtro
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.CropType.Filters.ALL_CROP_TYPES">
+            <summary>
+            Constante utilizada para utilizar todo tipo de cultivos
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.PayOptions">
+            <summary>
+            Constantes para el modelo PayOptions
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PayOptions.MAX_LENGTH_NAME">
+            <summary>
+            Máxima longitud para el nombre
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.PayOptions.MAX_LENGTH_DESCRIPTION">
+            <summary>
+            Máxima longitud para la descripción
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.City">
+            <summary>
+            Constantes para el modelo City
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.City.MAX_LENGTH_NAME">
+            <summary>
+            Máxima longitud para nombre
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config">
+            <summary>
+            Constantes para servicio Configuration
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.KEY_CONNECTION_STRING">
+            <summary>
+            Key utilizada para identificar la cadena de conexión en la BBDD en el archivo de configuración
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.JWT">
+            <summary>
+            Configuraciones de JWT
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.JWT.KEY_KEY">
+            <summary>
+            Key donde se almacena la clave de JWT
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.JWT.KEY_ISSUER">
+            <summary>
+            Key donde se almacena el Issuer de JWT
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.JWT.KEY_AUDIENCE">
+            <summary>
+            Key donde se almacena el Audience de JWT
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.JWT.KEY_VALIDATE_AUDIENCE">
+            <summary>
+            Key para activar/desactivar la validación de audiencia
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.JWT.KEY_VALIDATE_ISSUER">
+            <summary>
+            Key para activar/desactivar la validación del Issuer
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.CORS">
+            <summary>
+            Constantes de configuración de CORS
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.CORS.KEY_ALLOW_ANY_HEADER">
+            <summary>
+            Key de configuración: Permitir cualquier cabecera
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.CORS.KEY_ALLOW_ANY_METHOD">
+            <summary>
+            Key de configuración: Permitir cualquier método
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.CORS.KEY_ALLOW_ANY_ORIGIN">
+            <summary>
+            Key de configuración: Permitir cualquier origen
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.CORS.KEY_WITH_ORIGINS">
+            <summary>
+            Key de configuración: Orígenes. Varios separados por coma
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.Cripto">
+            <summary>
+            Constantes de configuración para el servicio de encriptación
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Cripto.KEY_IV">
+            <summary>
+            Llave o clave correspondiente el json donde se guarda el iv
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.Users">
+            <summary>
+            Constantes de configuración de usuarios
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Users.KEY_RESET">
+            <summary>
+            Resetea los usuarios existentes creando Administrador y Vendedor
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.Users.Roles">
+            <summary>
+            Roles de usuario
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Users.Roles.ADMIN">
+            <summary>
+            Rol administrador.
+            Permiso total de la aplicación.
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Users.Roles.SELLER">
+            <summary>
+            Rol vendedor
+            Permisos para vender y contratar agricultores.
+            No tiene permisos para modificar o crear cajas, agricultores y clientes
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Constants.Config.Database">
+            <summary>
+            Constantes de configuración de base de datos
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Database.KEY_CORE">
+            <summary>
+            Tipo de motor de base de datos
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Database.SQLSERVER_CORE">
+            <summary>
+            Valor utilizado para indicar motor SQL Server
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Database.MYSQL_CORE">
+            <summary>
+            Valor utilizado para indicar motor MySQL
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Database.CONNECTIONSTRING_SQLSERVER">
+            <summary>
+            String de conexión de SQL Server
+            </summary>
+        </member>
+        <member name="F:AgrajaBackend.Constants.Config.Database.CONNECTIONSTRING_MYSQL">
+            <summary>
+            String de conexión de MySQL
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.CityController">
+            <summary>
+            Controlador de ciudad
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CityController.#ctor(AgrajaBackend.Services.Contracts.ICitiesService)">
+            <summary>
+            Constructor de controlador de ciudades
+            </summary>
+            <param name="service">servicio de ciuades</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CityController.GetAll">
+            <summary>
+            Adquiere todas las ciudades donde se encuentran agricultores
+            </summary>
+            <returns>Todas las ciudades o NotFound si todavía no se encuentran</returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.ClientController">
+            <summary>
+            Controlador de cliente
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.ClientController},AgrajaBackend.Services.Contracts.IClientsService,AgrajaBackend.Services.Contracts.IFarmersService,AgrajaBackend.Controllers.Validators.PersonDataValidator)">
+            <summary>
+            Constructor de controlador
+            </summary>
+            <param name="logger">sevicio de Log</param>
+            <param name="clientServce">servicio de cliente</param>
+            <param name="farmersService">servicio de agricultor</param>
+            <param name="personDataValidator">validador de persona</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.Add(AgrajaBackend.DTOs.Client.ClientAddRequestDto)">
+            <summary>
+            Añade un nuevo cliente
+            </summary>
+            <param name="newClient"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.EditById(System.Int32,AgrajaBackend.DTOs.Client.ClientUpdateRequestDto)">
+            <summary>
+            Actualiza datos de un cliente
+            </summary>
+            <param name="id"></param>
+            <param name="updatedData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.GetAll">
+            <summary>
+            Devuelve todos los clientes o un 404 si no existen
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.GetById(System.Int32)">
+            <summary>
+            Adquire un cliente por su ID
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.GetClientByPartialDni(System.String,System.Boolean)">
+            <summary>
+            Adquiere todos los clientes que coinciden con una parte de su dni o nombre
+            </summary>
+            <param name="dniOrName"></param>
+            <param name="onlyActiveClients">Indica true para devolver solo clientes activos</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.GetClientsByFarmerHiring(System.Int32)">
+            <summary>
+            Adquire todos los clientes que tienen contratado a un agricultor por el ID del agricultor
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.ClientController.ParseClient(AgrajaBackend.DTOs.Client.ClientAddRequestDto)">
+            <summary>
+            Parsea un objeto ClientAddRequestDto a un objeto del modelo Client para su guardado en BBDD.
+            La función también normaliza los espacios vacíos
+            </summary>
+            <param name="newClient"></param>
+            <returns>Devuelve el objeto Farmer parseado</returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.CrateController">
+            <summary>
+            Controlador de caja
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.CrateController},AgrajaBackend.Services.Contracts.ICratesService,AgrajaBackend.Services.Contracts.IClientsService,AgrajaBackend.Services.Contracts.IPayOptionsService)">
+            <summary>
+            Constructor de controlador de caja
+            </summary>
+            <param name="logger">servio de log</param>
+            <param name="crateService">Servicio de caja</param>
+            <param name="clientsService">Servicio de cliente</param>
+            <param name="payOptionsService">Servicio de opciones de pago</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.Add(AgrajaBackend.DTOs.Crate.CrateAddRequestDto)">
+            <summary>
+            Añade una nueva caja a la base de datos
+            </summary>
+            <param name="newCrate">Nueva caja en formato json</param>
+            <returns>Retornará OK si se consigue añadir la caja.
+            Retornará un 409 si la caja que se intenta añadir ya exite.
+            Error BadRequest para otros errores</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.EditCrate(System.Int32,AgrajaBackend.DTOs.Crate.CrateEditRequestDto)">
+            <summary>
+            Edita una caja existente a través de su Id.
+            Solo se permite la mofidicación de nombre, descripción y stock
+            </summary>
+            <param name="id"></param>
+            <param name="editedCrate">Json con los nuevos parámetros</param>
+            <returns>Ok si todo ha ido bien.
+            NotFound si la caja no se encuentra.</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.GetAll">
+            <summary>
+            Retorna todas las cajas existentes
+            </summary>
+            <returns>Retorna un array jason con todos los objetos de las cajas</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.GetById(System.Int32)">
+            <summary>
+            Adquiere una caja por su ID
+            </summary>
+            <param name="crateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.GetAllSalesByCrateId(System.Int32)">
+            <summary>
+            Adquire todas las ventas de una caja por su ID
+            </summary>
+            <param name="crateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.GetAllSalesByClientId(System.Int32)">
+            <summary>
+            Devuelve todas las ventas realizadas por un cliente por su Id
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.DeleteCrateById(System.Int32)">
+            <summary>
+            Elimina una caja por su ID
+            </summary>
+            <param name="crateId">Id de la caja</param>
+            <returns>NotFound si la caja no se encuentra.
+            OK si la caja ha sido eliminada con éxito</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CrateController.AddCrateSale(AgrajaBackend.DTOs.Crate.CrateSaleRequestDto)">
+            <summary>
+            Crea una nueva venta de caja
+            </summary>
+            <param name="crateSale">Json con Id de cliente, Id de caja e Id de opción de pago</param>
+            <returns>Devuelve un json con la información de cliente y caja asociados a la adquisición</returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.CropTypeController">
+            <summary>
+            Controlador de tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CropTypeController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.CropTypeController},AgrajaBackend.Services.Contracts.ICropTypesService)">
+            <summary>
+            Constructor de controlador de tipo de cultivo
+            </summary>
+            <param name="logger">servicio de log</param>
+            <param name="cropTypesService">servicio de tipo de cultivo</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.CropTypeController.GetAll">
+            <summary>
+            Adquiere todos los tipos de cultivo
+            </summary>
+            <returns>Retorna los tipos de cultivo o un NotFound</returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.FarmerController">
+            <summary>
+            Controlador de agricultor
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.FarmerController},AgrajaBackend.Services.Contracts.IFarmersService,AgrajaBackend.Services.Contracts.IClientsService,AgrajaBackend.Services.Contracts.ICropTypesService,AgrajaBackend.Controllers.Validators.PersonDataValidator)">
+            <summary>
+            Constructor del controlador de agricultor
+            </summary>
+            <param name="logger">servicio de log</param>
+            <param name="farmersService">servicio de agricultor</param>
+            <param name="clientsService">servicio de clientes</param>
+            <param name="cropTypesService">servicio de tipo de cultivos</param>
+            <param name="personDataValidator">validador de persona</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.Add(AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto)">
+            <summary>
+            Añade un nuevo agricultor
+            </summary>
+            <param name="newFarmer">Nuevo agricultor</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.EditById(System.Int32,AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto)">
+            <summary>
+            Edita un agricultor por su Id
+            </summary>
+            <param name="id">Id del agricultor</param>
+            <param name="updatedData">Datos modificados del agricultor</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.GetById(System.Int32)">
+            <summary>
+            Adquiere un agricultor por su Id
+            </summary>
+            <param name="id">Id del agricultor</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.GetByCropType(System.Int32)">
+            <summary>
+            Devuelve los agricultores que utilicen el tipo de cultivo indicado.
+            Si se indica 0 (valor por defecto), devolverá todos los agricultores.
+            </summary>
+            <param name="cropTypeId">Id del tipo de cultivo</param>
+            <returns>Devuelve los agricultores que coinciden con el tipo de cultivo</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.AddHiring(AgrajaBackend.DTOs.Farmer.FarmerHiringAddRequestDto)">
+            <summary>
+            Añade un la contratación de un agricultor por un cliente y devuelve los datos del contrato.
+            </summary>
+            <param name="hiring"></param>
+            <returns>Devuelve un json con los datos del contrato</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.GetHiringsByFarmerId(System.Int32)">
+            <summary>
+            Devuelve un lista de contrataciones con solo IDs de un agricultor por su ID
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.GetHiringsByClientId(System.Int32)">
+            <summary>
+            Devuelve todos los dtos de contrataciones de un cliente
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.DeleteHiringsByFarmerAndClientId(System.Int32,System.Int32)">
+            <summary>
+            Elimina una contratatación por el Id del agricultor y el id del cliente
+            </summary>
+            <param name="farmerId"></param>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.FarmerController.DeleteHiringByIdAsync(System.Int32)">
+            <summary>
+            Elimina una contratación por su Id
+            </summary>
+            <param name="hiringId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.LoginController">
+            <summary>
+            Controlador para login de usuario
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.LoginController},AgrajaBackend.Services.Contracts.IUserService)">
+            <summary>
+            Constructor del controlador
+            </summary>
+            <param name="logger"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.Get">
+            <summary>
+            Adquiere el usuario actual
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.Post(AgrajaBackend.DTOs.User.UserLoginRequestDto)">
+            <summary>
+            Endpoint para login de usuario
+            </summary>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.Put(AgrajaBackend.DTOs.User.UserNewPasswordRequestDto)">
+            <summary>
+            Actualiza la contraseña de un usuario
+            </summary>
+            <param name="newPasswordRequestDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.Refresh(AgrajaBackend.DTOs.JwtToken.JwtTokenDto)">
+            <summary>
+            Actualiza los tokens para no tener que volver a iniciar sesión
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.LoginController.Revoke">
+            <summary>
+            Revoca el token de un usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.PayOptionController">
+            <summary>
+            controlador de opciones de pago
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.PayOptionController.#ctor(Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.PayOptionController},AgrajaBackend.Services.Contracts.IPayOptionsService)">
+            <summary>
+            Constructor de controlador
+            </summary>
+            <param name="logger">Servicio logger</param>
+            <param name="service">Servicio de opciones de pago</param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.PayOptionController.GetAll">
+            <summary>
+            Adquiere todas las formas de pago.
+            </summary>
+            <returns>Devuelve todas las formas de pago existentes. Si no hay formas de pago devuelve un 404</returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.PayOptionController.GetPayOptionById(System.Int32)">
+            <summary>
+            Adquiere una forma de pago por su Id.
+            Devuelve un código 404 (Not Found) si no se encuentra.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Controllers.Validators.PersonDataValidator">
+            <summary>
+            Clase que sirve para validar una persona
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.Validators.PersonDataValidator.#ctor(AgrajaBackend.Services.Contracts.IClientsService,AgrajaBackend.Services.Contracts.IFarmersService,AgrajaBackend.Services.Contracts.ICitiesService,AgrajaBackend.Services.Contracts.ICropTypesService,Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Controllers.Validators.PersonDataValidator})">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="clientsService"></param>
+            <param name="farmersService"></param>
+            <param name="citiesService"></param>
+            <param name="cropTypesService"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.Validators.PersonDataValidator.ValidateDataAsync(AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto,System.Int32)">
+            <summary>
+            Genera un ObjectResult con el código de estado. 200 si todo Ok.
+            Sirve para validar si Person cumple con todas las validaciones.
+            Person puede ser Farmer o Client.
+            </summary>
+            <param name="newPerson"></param>
+            <param name="personId">Parámetro opcional. Si se especifica clientId entonces se quiere validar la edición de un cliente existente</param>
+            <returns>Devuelve </returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.Validators.PersonDataValidator.ValidateFarmerData(AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto,System.Int32,System.Boolean)">
+            <summary>
+            Validación para persona de tipo Agricultor
+            </summary>
+            <param name="newPerson"></param>
+            <param name="personId"></param>
+            <param name="isUpdate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Controllers.Validators.PersonDataValidator.ValidateClientData(AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto,System.Int32)">
+            <summary>
+            Validación para persona de tipo cliente
+            </summary>
+            <param name="newPerson"></param>
+            <param name="personId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.City.CityDto">
+            <summary>
+            Dto de City
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.City.CityDto.Id">
+            <summary>
+            Id de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.City.CityDto.Name">
+            <summary>
+            Nombre de ciudad
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.City.CityDto.ParseAll(AgrajaBackend.Models.City[])">
+            <summary>
+            Mapea los datos de un array de modelos City a una lista de CityDto
+            </summary>
+            <param name="cities">Array de City</param>
+            <returns>Lista de CityDto</returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Client.ClientAddRequestDto">
+            <summary>
+            Dto de añadido de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Dni">
+            <summary>
+            DNI Cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Name">
+            <summary>
+            Nombre de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Surnames">
+            <summary>
+            Apellidos del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Address">
+            <summary>
+            Dirección del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Telephone">
+            <summary>
+            Teléfono del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.Email">
+            <summary>
+            Email del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientAddRequestDto.IsActive">
+            <summary>
+            Indica si un modelo tipo persona esta activo o no
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Client.ClientDto">
+            <summary>
+            Dto de cliente de resultado
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Id">
+            <summary>
+            Id del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Dni">
+            <summary>
+            DNI del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Name">
+            <summary>
+            Nombre del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Surnames">
+            <summary>
+            Apellidos del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Address">
+            <summary>
+            Dirección del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Telephone">
+            <summary>
+            Teléfono del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.Email">
+            <summary>
+            Email del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientDto.IsActive">
+            <summary>
+            Indica si un modelo tipo persona está activa o no
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Client.ClientDto.Parse(AgrajaBackend.Models.Client)">
+            <summary>
+            Mapea un modelo de cliente a un Dto de cliente
+            </summary>
+            <param name="client">Modelo de cliente</param>
+            <returns>Dto de cliente</returns>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Client.ClientDto.ParseAll(AgrajaBackend.Models.Client[])">
+            <summary>
+            Convierte un array de modelos de cliente a una lista de dtos
+            </summary>
+            <param name="clients"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Client.ClientFarmerHiringDto">
+            <summary>
+            Dto que devuelve datos del cliente con fecha de contratación de agriculor e ID del agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientFarmerHiringDto.FarmerId">
+            <summary>
+            Id Agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientFarmerHiringDto.HiringId">
+            <summary>
+            Id de contrato agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientFarmerHiringDto.HiringDateTime">
+            <summary>
+            Fecha de contratación
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto">
+            <summary>
+            Reques dto para actualizar clientes
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Address">
+            <summary>
+            Dirección de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Dni">
+            <summary>
+            Dni del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Surnames">
+            <summary>
+            Apellidos
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Client.ClientUpdateRequestDto.IsActive">
+            <summary>
+            Indica si el cliente está activo, true por defecto.
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Crate.CrateAddRequestDto">
+            <summary>
+            DTO de entrada de creación de Crate (caja)
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.Name">
+            <summary>
+            Nombre de la cesta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.Description">
+            <summary>
+            Descripción de la cesta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.Kilograms">
+            <summary>
+            Kilogramos de la cesta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.Price">
+            <summary>
+            Precio de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.Stock">
+            <summary>
+            Stock de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateAddRequestDto.IsActive">
+            <summary>
+            Indica si la caja está activa
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Crate.CrateDto">
+            <summary>
+            Dto de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Id">
+            <summary>
+            Id de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.IsActive">
+            <summary>
+            Indica si la caja está activa
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Name">
+            <summary>
+            Nombre de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Description">
+            <summary>
+            Descripción de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Kilograms">
+            <summary>
+            Kilogramos de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Price">
+            <summary>
+            Precio de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateDto.Stock">
+            <summary>
+            Stock de la caja
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Crate.CrateDto.Parse(AgrajaBackend.Models.Crate)">
+            <summary>
+            Mapea el modelo de caja a un Dto de resultado
+            </summary>
+            <param name="crate">Modelo de caja</param>
+            <returns>Dto de caja</returns>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Crate.CrateDto.ParseAll(AgrajaBackend.Models.Crate[])">
+            <summary>
+            Mapea un array de modelos de caja a una lista de Dto de caja
+            </summary>
+            <param name="crates">Array de cajas</param>
+            <returns>Lista de dtos</returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Crate.CrateEditRequestDto">
+            <summary>
+            Dto de edición de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateEditRequestDto.Name">
+            <summary>
+            Nombre de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateEditRequestDto.Description">
+            <summary>
+            Descripción de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateEditRequestDto.Stock">
+            <summary>
+            Stock de cajas
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateEditRequestDto.IsActive">
+            <summary>
+            Indica si la caja esta activa
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Crate.CrateSaleDto">
+            <summary>
+            Dto de venta de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.SaleId">
+            <summary>
+            Id de la venta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientId">
+            <summary>
+            Id del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientIsActive">
+            <summary>
+            Indica si el cliente está activo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientName">
+            <summary>
+            Nombre del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientSurnames">
+            <summary>
+            Apellidos del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientAddress">
+            <summary>
+            Dirección del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientTelephone">
+            <summary>
+            Teléfono del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.ClientEmail">
+            <summary>
+            Email del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CrateId">
+            <summary>
+            Id de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CrateIsActive">
+            <summary>
+            Indica si la caja está activa
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CrateName">
+            <summary>
+            Nombre de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CrateDescription">
+            <summary>
+            Descripción de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.Amount">
+            <summary>
+            Cantidad vendida
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.TotalPrice">
+            <summary>
+            Precio total de venta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CrateKilograms">
+            <summary>
+            Kilos de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.CratePrice">
+            <summary>
+            Precio de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.PayOptionName">
+            <summary>
+            Opción de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleDto.SaleDateTimeUtz">
+            <summary>
+            Fecha y hora de la compra
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Crate.CrateSaleDto.Parse(AgrajaBackend.Models.CrateSale)">
+            <summary>
+            Mapeo un modelo de venta de caja en un Dto
+            </summary>
+            <param name="crateSale">Modelo de venta de caja</param>
+            <returns>Dto de venta</returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto">
+            <summary>
+            Dto de request de venta de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto.ClientId">
+            <summary>
+            ID del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto.CrateId">
+            <summary>
+            ID de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto.Amount">
+            <summary>
+            Cantidad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto.PayOptionId">
+            <summary>
+            ID de opción de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Crate.CrateSaleRequestDto.CreatedDateTime">
+            <summary>
+            Fecha y hora de venta
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.CropType.CropTypeDto">
+            <summary>
+            Dto de tipo cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.CropType.CropTypeDto.Id">
+            <summary>
+            Id de tipo de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.CropType.CropTypeDto.Name">
+            <summary>
+            Nombre del tipo de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.CropType.CropTypeDto.Description">
+            <summary>
+            Descripción del tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.CropType.CropTypeDto.ParseAll(AgrajaBackend.Models.CropType[])">
+            <summary>
+            Mapea una array de modelo tipo cultvio a una lista de Dtos
+            </summary>
+            <param name="cropTypes">Array de tipos de caja</param>
+            <returns>Lista con Dtos tipo de caja</returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto">
+            <summary>
+            Interface persona Dto
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Address">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Dni">
+            <summary>
+            DNI
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Email">
+            <summary>
+            Email 
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Surnames">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Contracts.IPersonAddRequestDto.IsActive">
+            <summary>
+            Indica si un modelo que hereda de persona está activa o no
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto">
+            <summary>
+            Request Dto de Farmer
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Dni">
+            <summary>
+            DNI agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Name">
+            <summary>
+            Nombre del agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Surnames">
+            <summary>
+            Apellidos
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Address">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.CityId">
+            <summary>
+            ID de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.CropTypeId">
+            <summary>
+            Tipo de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto.IsActive">
+            <summary>
+            Indica si un agricultor está activo
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerDto">
+            <summary>
+            Dto de Farmer
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Id">
+            <summary>
+            ID de Farmer
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Dni">
+            <summary>
+            DNI
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.IsActive">
+            <summary>
+            Indica si un agricultor está activo o no
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Surnames">
+            <summary>
+            Apellidos
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Address">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.CityId">
+            <summary>
+            ID de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerDto.CropTypeId">
+            <summary>
+            ID De tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Farmer.FarmerDto.Parse(AgrajaBackend.Models.Farmer)">
+            <summary>
+            Mapea un modelo de tipo Farmer a este Dto
+            </summary>
+            <param name="farmer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Farmer.FarmerDto.ParseAll(AgrajaBackend.Models.Farmer[])">
+            <summary>
+            Mapea un array de modelos Farmer a una lisa de Dtos
+            </summary>
+            <param name="farmers"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerHiringAddRequestDto">
+            <summary>
+            Dto de request de Farmer Hiring
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringAddRequestDto.ClientId">
+            <summary>
+            ID de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringAddRequestDto.FarmerId">
+            <summary>
+            ID de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringAddRequestDto.HiringDateTimeUtz">
+            <summary>
+            Fecha y hora de la contratación
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerHiringDto">
+            <summary>
+            Dto de contración de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientId">
+            <summary>
+            Id de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientIsActive">
+            <summary>
+            Indica si el cliente está activo o no
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientName">
+            <summary>
+            Nombre del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientSurNames">
+            <summary>
+            Apellidos de cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientEmail">
+            <summary>
+            Email del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientAddress">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.ClientTelephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.FarmerId">
+            <summary>
+            Id de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.FarmerIsActive">
+            <summary>
+            Inidica si el agricultor está activo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.FarmerName">
+            <summary>
+            Nombre del agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.FarmerSurnames">
+            <summary>
+            Apellidos agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.FarmerCity">
+            <summary>
+            Ciudad del agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.CropName">
+            <summary>
+            Nombre de tipo de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringDto.SaleDateTimeUtc">
+            <summary>
+            Fecha y hora de la contratación
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto">
+            <summary>
+            Dto de contrataciones de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.Id">
+            <summary>
+            Id del registro
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.ClientId">
+            <summary>
+            Id del cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.FarmerId">
+            <summary>
+            Id del agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.DateHiringDateTimeUtz">
+            <summary>
+            Fecha de contratación
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.Parse(AgrajaBackend.Models.FarmerHiring)">
+            <summary>
+            Mapea un modelo de contratación a un Dto
+            </summary>
+            <param name="hiring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Farmer.FarmerHiringIDsDto.ParseAll(AgrajaBackend.Models.FarmerHiring[])">
+            <summary>
+            Mapea un array de modelo de contratación a una lista de dtos
+            </summary>
+            <param name="hirings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmersDto">
+            <summary>
+            Dto de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmersDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmersDto.IsActive">
+            <summary>
+            Indica si el agricultor está activo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmersDto.Dni">
+            <summary>
+            DNI
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmersDto.CityId">
+            <summary>
+            ID de la ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmersDto.CropTypeId">
+            <summary>
+            ID de tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.Farmer.FarmersDto.ParseAll(AgrajaBackend.Models.Farmer[])">
+            <summary>
+            Mapea un array de modelo agricultor a una lista de sus Dto
+            </summary>
+            <param name="farmers"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto">
+            <summary>
+            Dto de actualización de agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Dni">
+            <summary>
+            DNI agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Surnames">
+            <summary>
+            Apellidos agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Address">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.Farmer.FarmerUpdateRequestDto.IsActive">
+            <summary>
+            Indica si el agricultor está activo
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.JwtToken.JwtTokenDto">
+            <summary>
+            Token Jwt
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.JwtToken.JwtTokenDto.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.JwtToken.JwtTokenDto.RefreshToken">
+            <summary>
+            Token de refresco
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.PayOption.PayOptionDto">
+            <summary>
+            Dto de opciones de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.PayOption.PayOptionDto.Id">
+            <summary>
+            ID de payOption
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.PayOption.PayOptionDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.PayOption.PayOptionDto.Description">
+            <summary>
+            Descripción
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.PayOption.PayOptionDto.Parse(AgrajaBackend.Models.PayOption)">
+            <summary>
+            Mapea un modelo de PayOption a su Dto
+            </summary>
+            <param name="payOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.DTOs.PayOption.PayOptionDto.ParseAll(AgrajaBackend.Models.PayOption[])">
+            <summary>
+            Mapea un array de modelo de opciones de pago a un lista de sus Dto
+            </summary>
+            <param name="payOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.User.UserDto">
+            <summary>
+            Dto que devuelve la información login de un usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.User.UserDto.Name">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.User.UserDto.Rol">
+            <summary>
+            Rol de usuario
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.User.UserLoginRequestDto">
+            <summary>
+            Dto de usuario y contraseña para iniciar sesión
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.User.UserLoginRequestDto.Name">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.User.UserLoginRequestDto.Password">
+            <summary>
+            Contraseña de usuario
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.DTOs.User.UserNewPasswordRequestDto">
+            <summary>
+            Dto para cambiar el password
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.DTOs.User.UserNewPasswordRequestDto.NewPassword">
+            <summary>
+            Nuevo password a cambiar
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Migrations.MySQL_init">
+            <inheritdoc />
+        </member>
+        <member name="M:AgrajaBackend.Migrations.MySQL_init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgrajaBackend.Migrations.MySQL_init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgrajaBackend.Migrations.MySQL_init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AgrajaBackend.Models.City">
+            <summary>
+            Modelo de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.City.Id">
+            <summary>
+            Id de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.City.Name">
+            <summary>
+            Nombre de la ciudad
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.Client">
+            <summary>
+            Modelo cliente que hereda de PersonData
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.Crate">
+            <summary>
+            Modelo de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Id">
+            <summary>
+            Id de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Description">
+            <summary>
+            Descripción
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Kilograms">
+            <summary>
+            Kilos de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Price">
+            <summary>
+            Precio de la caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.Stock">
+            <summary>
+            Stock de cajas
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Crate.IsActive">
+            <summary>
+            Indica si una caja esta activa o no
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.CrateSale">
+            <summary>
+            Modelo de venta de caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.Id">
+            <summary>
+            Id de venta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.Client">
+            <summary>
+            Cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.Crate">
+            <summary>
+            Caja
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.Amount">
+            <summary>
+            Cantidad de cajas vendidas
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.TotalPrice">
+            <summary>
+            Precio total de la venta
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.PayOption">
+            <summary>
+            Opción de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CrateSale.DateTimeUtc">
+            <summary>
+            Fecha y hora de la compra
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.CropType">
+            <summary>
+            Modelo de tipo de cultivo
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CropType.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CropType.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.CropType.Description">
+            <summary>
+            Descripción
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.Farmer">
+            <summary>
+            Modelo agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Farmer.CityId">
+            <summary>
+            Id de ciudad
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.Farmer.CropTypeId">
+            <summary>
+            Tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Models.Farmer.Parse(AgrajaBackend.DTOs.Farmer.FarmerAddRequestDto)">
+            <summary>
+            Parsea un objeto FarmerAddRequestDto a un objeto del modelo Farmer para su guardado en BBDD.
+            La función también normaliza los espacios vacíos
+            </summary>
+            <param name="newFarmer"></param>
+            <returns>Devuelve el objeto Farmer parseado</returns>
+        </member>
+        <member name="T:AgrajaBackend.Models.FarmerHiring">
+            <summary>
+            Modelo de contratación agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.FarmerHiring.Id">
+            <summary>
+            Id contratación
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.FarmerHiring.Client">
+            <summary>
+            Cliente
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.FarmerHiring.Farmer">
+            <summary>
+            Agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.FarmerHiring.DateTimeUtc">
+            <summary>
+            Fecha y hora de la contratación
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.PayOption">
+            <summary>
+            Modelo de opciones de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PayOption.Id">
+            <summary>
+            Id de modelo de pago
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PayOption.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PayOption.Description">
+            <summary>
+            Descripción
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.PersonData">
+            <summary>
+            Modelo de persona. Lo heredan tanto el modelo cliente com el modelo agricultor
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Dni">
+            <summary>
+            DNI
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Surnames">
+            <summary>
+            Apellidos
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Address">
+            <summary>
+            Dirección
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Telephone">
+            <summary>
+            Teléfono
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.PersonData.IsActive">
+            <summary>
+            Flag para indicar si la persona está activa o no
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Models.User">
+            <summary>
+            Modelo de usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.Id">
+            <summary>
+            Id del usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.Name">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.Password">
+            <summary>
+            Contraseña del usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.Rol">
+            <summary>
+            Rol de usuario
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.RefreshToken">
+            <summary>
+            Token de refresco
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Models.User.IsActive">
+            <summary>
+            Indica si el usuario está activo
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Services.CitiesService">
+            <summary>
+            Servicio para CRUD clientes
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.CitiesService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context">Inyecta dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.CitiesService.GetAllAsync">
+            <summary>
+            Adquiere todas las ciudades de manera asíncrona
+            </summary>
+            <returns>Array de ciudades</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CitiesService.ExistsByIdAsync(System.Int32)">
+            <summary>
+            Comprueba si existe una ciudad por su Id
+            </summary>
+            <param name="cityId">Id de ciudad</param>
+            <returns>True si existe</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CitiesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere un ciudad por su Id
+            </summary>
+            <param name="cityId">Id de la ciudad</param>
+            <returns>Ciudad encontrada o null si no se encuentra</returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.ClientsService">
+            <summary>
+            Servicio de clientes
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor del servicio
+            </summary>
+            <param name="context">Se inyecta el dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.AddAsync(AgrajaBackend.Models.Client)">
+            <summary>
+            Añade un nuevo cliente de manera asíncrona
+            </summary>
+            <param name="client">Nuevo cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.UpdateAsync(AgrajaBackend.Models.Client)">
+            <summary>
+            Actualiza un cliente
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.GetAllAsync">
+            <summary>
+            Devuelve un array con todos los clientes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere un cliente por su Id
+            </summary>
+            <param name="clientId">Id del cliente</param>
+            <returns>Retorna el cliente o null si no se encuentra</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.GetByDniAsync(System.String)">
+            <summary>
+            Adquire un cliente por su DNI
+            </summary>
+            <param name="dni">DNI</param>
+            <returns>Devuelve el cliente o null si no se encuentra</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.GetByPartialDniOrNameAsync(System.String,System.Boolean)">
+            <summary>
+            Obtiene los clientes que tengan alguna coincidencia en su DNI o nombre
+            </summary>
+            <param name="partialDniOrName">Dni esrito parcialmente o entero</param>
+            <param name="onlyActiveClients">Añade true para devolver solo clientes activos</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.IsDniInUseAsync(System.Int32,System.String)">
+            <summary>
+            Verifica si un DNI ya está en uso en algún cliente.
+            Se debe indicar el Id del cliente que se debe ignorar para la comprobación.
+            Esto sirve para que se permita guardar el mismo DNI del cliente que se quiere modificar.
+            </summary>
+            <param name="personId">Se especifica el ciente que se quiere ignorar</param>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.ClientsService.IsEmailInUseAsync(System.Int32,System.String)">
+            <summary>
+            Verifica si un e-mail está en uso por algún otro cliente.
+            Se debe indicar el Id del cliente que se debe ignorar para la comprobación.
+            Esto sirve para que se permita guardar el mismo e-mail del cliente que se quiere modificar.
+            La razón es que normalmente la modificación de un cliente solo se hara de alguna de sus propiedades.
+            </summary>
+            <param name="personId"></param>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.ConfigService">
+            <summary>
+            Servicio de configuración
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Services.ConfigService.ConnectionString">
+            <summary>
+            Cadena de conexión a base de datos
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.ConfigService.#ctor">
+            <summary>
+            Constructor del servicio.
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.ICitiesService">
+            <summary>
+            Interface de ciudades
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICitiesService.GetAllAsync">
+            <summary>
+            Devuelve todas de manera asíncrona
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICitiesService.ExistsByIdAsync(System.Int32)">
+            <summary>
+            Devuelve true si la ciudad existe
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICitiesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Devuelve la ciudad por su Id
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.IClientsService">
+            <summary>
+            Interface de servicio cliente
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.AddAsync(AgrajaBackend.Models.Client)">
+            <summary>
+            Añadir cliente
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.UpdateAsync(AgrajaBackend.Models.Client)">
+            <summary>
+            Actualiza un cliente
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.GetByDniAsync(System.String)">
+            <summary>
+            Obtener por su DNI
+            </summary>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.GetByPartialDniOrNameAsync(System.String,System.Boolean)">
+            <summary>
+            Devuelve todos los clientes que coincidan de manera parcial con el dni
+            </summary>
+            <param name="partialDni"></param>
+            <param name="onlyClientActive">Indica true para devolver solo los clientes activos</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquirir por su ID
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.IsDniInUseAsync(System.Int32,System.String)">
+            <summary>
+            Devuelve true si el Dni ya está en uso
+            </summary>
+            <param name="personId"></param>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.IsEmailInUseAsync(System.Int32,System.String)">
+            <summary>
+            Devuelve tru si el email ya está en uso
+            </summary>
+            <param name="personId"></param>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IClientsService.GetAllAsync">
+            <summary>
+            Devuelve una matriz con todos los clientes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.IConfigService">
+            <summary>
+            Interface de configService
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Services.Contracts.IConfigService.ConnectionString">
+            <summary>
+            String de conexión a base de datos
+            </summary>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.ICratesService">
+            <summary>
+            Interface de servicio de cajas
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.AddAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Añade una caja 
+            </summary>
+            <param name="crate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.AddSaleAsync(AgrajaBackend.Models.CrateSale)">
+            <summary>
+            Añade una venta
+            </summary>
+            <param name="crateSale"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.NameExistsAsync(System.String,System.Int32)">
+            <summary>
+            Devuelve true si el nombre existe.
+            </summary>
+            <param name="name"></param>
+            <param name="crateId">Para ignorar la coincidencia de nombre con esta caja</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.GetAllAsync">
+            <summary>
+            Adquiere todas las cajas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere una caja por su Id
+            </summary>
+            <param name="crateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.RemoveAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Elimina una caja por su Id
+            </summary>
+            <param name="crate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.UpdateAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Actualiza una caja
+            </summary>
+            <param name="crate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.GetAllSalesByCrateId(System.Int32)">
+            <summary>
+            Retorna todas las ventas de la caja indicada por su Id
+            </summary>
+            <param name="crateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICratesService.GetAllSalesByClientId(System.Int32)">
+            <summary>
+            Retorna todas las ventas pertenecientes a un cliente
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.ICriptoService">
+            <summary>
+            Interface de servicio de encriptación
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICriptoService.Encript(System.String,System.String)">
+            <summary>
+            Encripta cadena de texto
+            </summary>
+            <param name="textToEncript">texto a encriptar</param>
+            <param name="key">clave o contraseña</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICriptoService.Decript(System.String,System.String)">
+            <summary>
+            Desencripta una cadena de texto
+            </summary>
+            <param name="textToDecript">texto a desencriptar</param>
+            <param name="key">clave o contraseña</param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.ICropTypesService">
+            <summary>
+            Interface de servicio de tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICropTypesService.GetAllAsync">
+            <summary>
+            Retorna todos los cultivos de manera asíncrona
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICropTypesService.ExistsByIdAsync(System.Int32)">
+            <summary>
+            Devuelve tru si existe el tipo de cultivo
+            </summary>
+            <param name="cropTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.ICropTypesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere tipo de cultivo por su Id
+            </summary>
+            <param name="cropTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.IFarmersService">
+            <summary>
+            Interface de servicio agricultor
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.AddAsync(AgrajaBackend.Models.Farmer)">
+            <summary>
+            Añade un agricultor de manera asíncrona
+            </summary>
+            <param name="farmer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.AddHiringAsync(AgrajaBackend.Models.FarmerHiring)">
+            <summary>
+            Añade una contratación de manera asíncrona
+            </summary>
+            <param name="farmerHiring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetAllAsync">
+            <summary>
+            Adquiere todos los agricultores de manera asíncrona
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetByCropTypeAsync(System.Int32)">
+            <summary>
+            Adquiere los agricultores que coincidan con el tipo de cultivo
+            </summary>
+            <param name="cropType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.IsDniInUseAsync(System.Int32,System.String)">
+            <summary>
+            Devuelve tru si el DNI está en uso
+            </summary>
+            <param name="personId"></param>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetByDniAsync(System.String)">
+            <summary>
+            Adquire un agricultor por su DNI
+            </summary>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.IsEmailInUseAsync(System.Int32,System.String)">
+            <summary>
+            Devuelve true si el email está en uso
+            </summary>
+            <param name="personId"></param>
+            <param name="email"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetByEmailAsync(System.String)">
+            <summary>
+            Adquire un agricultor por su Email
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.UpdateAsync(AgrajaBackend.Models.Farmer)">
+            <summary>
+            Acutaliza un agricultor de manera asíncrona
+            </summary>
+            <param name="farmer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere un agricultor por su Id
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetHiringsByFarmerIdAsync(System.Int32)">
+            <summary>
+            Adquiere las contrataciones de un agricultor por su Id
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetHiringById(System.Int32)">
+            <summary>
+            Adquiere una contratación por su Id
+            </summary>
+            <param name="hiringId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetClientsByFarmerHiring(System.Int32)">
+            <summary>
+            Adquire todos los cientes que coinciden con la contratación de un agricultor.
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.RemoveHirings(AgrajaBackend.Models.FarmerHiring[])">
+            <summary>
+            Elimina varios contratos
+            </summary>
+            <param name="farmerHirings"></param>
+            <returns>Devuelve una excepción si algo salio mal</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetHiringsByClientIdAsync(System.Int32)">
+            <summary>
+            Aquire todas las contrataciones de un agricultor relacionadas con un cliente por su Id
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetHiringDto(AgrajaBackend.Models.FarmerHiring)">
+            <summary>
+            Adquire un dto de contratación por su modelo
+            </summary>
+            <param name="hiring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IFarmersService.GetHiringsDtos(AgrajaBackend.Models.Client)">
+            <summary>
+            Devuelve todos los dtos de contrataciones de un cliente
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.IPayOptionsService">
+            <summary>
+            Interface de servicio de formas de pago
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IPayOptionsService.GetAllAsync">
+            <summary>
+            Adquiere todas las formas de pago de manera asíncrona
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IPayOptionsService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquire una forma de pago por su Id
+            </summary>
+            <param name="payOptionId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.Contracts.IUserService">
+            <summary>
+            Interface de servicio de usuarios
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Services.Contracts.IUserService.ConfigPendig">
+            <summary>
+            Será true si se han inicializado los usuarios por primera vez o se han resetado, con la intención de inicar que es necesario configurar nuevas contraseñas.
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.GetAllAsync">
+            <summary>
+            Adquiere todos los usuarios
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.RefreshTokenAsync(AgrajaBackend.DTOs.JwtToken.JwtTokenDto)">
+            <summary>
+            Actualiza los tokens
+            </summary>
+            <param name="jwtToken">Tokens existentes en el cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.AddAsync(AgrajaBackend.Models.User)">
+            <summary>
+            Añade un usuario
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.UpdateAsync(AgrajaBackend.Models.User)">
+            <summary>
+            Actualiza un usuario
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.GetUserTokenAsync(AgrajaBackend.DTOs.User.UserLoginRequestDto)">
+            <summary>
+            Devuelve el token de usuario si es válido
+            </summary>
+            <param name="userLogin"></param>
+            <returns>Devolverá null si el usuario no coincide</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.InitializeDefaultUsers">
+            <summary>
+            Crea los usuarios por defecto
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.UpdateUserPasswordAsync(AgrajaBackend.DTOs.User.UserNewPasswordRequestDto)">
+            <summary>
+            Actualiza la contraseña y envía un nuevo token
+            </summary>
+            <param name="userNewPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.Contracts.IUserService.RevokeAsync(System.String)">
+            <summary>
+            Revoca el token del usuario indicado
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="T:AgrajaBackend.Services.CratesService">
+            <summary>
+            Servicio de cajas
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor del servicio
+            </summary>
+            <param name="context">Se inyecta el dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.NameExistsAsync(System.String,System.Int32)">
+            <summary>
+            Comprueba si el nombre de la caja ya existe
+            </summary>
+            <param name="name">Nombre de la caja</param>
+            <param name="crateId">Id de la caja para no incluirlo en la búsqueda</param>
+            <returns>True si existe</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere un caja por su Id
+            </summary>
+            <param name="crateId">Id de la caja</param>
+            <returns>Caja o null si no existe</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.GetAllAsync">
+            <summary>
+            Adquiere todas las cajas
+            </summary>
+            <returns>Array de cajas existentes</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.AddAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Añade una nueva caja
+            </summary>
+            <param name="crate">Caja a añadir</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.UpdateAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Actualiza una caja existente
+            </summary>
+            <param name="crate">Caja a actualizar</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.RemoveAsync(AgrajaBackend.Models.Crate)">
+            <summary>
+            Obsoleto! elimina una caja.
+            Se va a eliminar y se sustituira por activar/desactivar
+            </summary>
+            <param name="crate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.AddSaleAsync(AgrajaBackend.Models.CrateSale)">
+            <summary>
+            Añade una venta de caja
+            </summary>
+            <param name="crateSale">venta de caja</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.GetAllSalesByCrateId(System.Int32)">
+            <summary>
+            Adquiere todas las ventas de una caja por su Id, con ciertas estadísticas
+            </summary>
+            <param name="crateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CratesService.GetAllSalesByClientId(System.Int32)">
+            <summary>
+            Asquiere todas las ventas por Id de usuario
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.CriptoService">
+            <summary>
+            Servicio para encriptar y desencriptar cadenas de texto
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.CriptoService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AgrajaBackend.Services.CriptoService.Decript(System.String,System.String)">
+            <summary>
+            Desencripta una cadena de text
+            </summary>
+            <param name="textToDecript">Texto a desencriptar</param>
+            <param name="key">Key o contraseña</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CriptoService.Encript(System.String,System.String)">
+            <summary>
+            Encripta una cadena de texto
+            </summary>
+            <param name="textToEncript">Texto a encriptar</param>
+            <param name="key">Key o password para desencriptar</param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.CropTypesService">
+            <summary>
+            Servicio de tipo de cultivo
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.CropTypesService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor del servicio
+            </summary>
+            <param name="context">Se inyecta el el dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.CropTypesService.GetAllAsync">
+            <summary>
+            Adquiere todos los tipos de cultivo
+            </summary>
+            <returns>Array con los tipos de cultivo</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CropTypesService.ExistsByIdAsync(System.Int32)">
+            <summary>
+            Comprueba si existe un tipo de cultivo por su Id
+            </summary>
+            <param name="cropTypeId">Id de tipo de cultivo</param>
+            <returns>True si se encuentra</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.CropTypesService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere tipo de cultivo por su Id
+            </summary>
+            <param name="cropTypeId">Id de tipo de cultivo</param>
+            <returns>Tipo de cultivo o null si no se encuentra</returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.FarmersService">
+            <summary>
+            Servicio de agricultor
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor del servicio
+            </summary>
+            <param name="context">Se inyecta el dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetAllAsync">
+            <summary>
+            Adquiere todos los agricultores
+            </summary>
+            <returns>Array de agricultores</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetByCropTypeAsync(System.Int32)">
+            <summary>
+            Adquire todos los agricultores que tengan un tipo de cultivo concreto
+            </summary>
+            <param name="cropType">Id del tipo cultivo</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.AddAsync(AgrajaBackend.Models.Farmer)">
+            <summary>
+            Añade un agricultor a la base de datos
+            </summary>
+            <param name="farmer">Nuevo agricultor</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.UpdateAsync(AgrajaBackend.Models.Farmer)">
+            <summary>
+            Actualiza un agricutlor
+            </summary>
+            <param name="farmer">Agricultor modificado</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.AddHiringAsync(AgrajaBackend.Models.FarmerHiring)">
+            <summary>
+            Añade una contratación de un agricultor con un cliente.
+            </summary>
+            <param name="farmerHiring">Nueva contratación</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.IsDniInUseAsync(System.Int32,System.String)">
+            <summary>
+            Verifica si un DNI ya está en uso en algún agricultor.
+            Se debe indicar el Id del agricultor que se debe ignorar para la comprobación.
+            Esto sirve para que se permita guardar el mismo DNI del agricultor que se quiere modificar.
+            </summary>
+            <param name="personId">Se especifica el agricultor que se quiere ignorar</param>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetByDniAsync(System.String)">
+            <summary>
+            Devuelve un agricultor por su DNI
+            </summary>
+            <param name="dni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetByEmailAsync(System.String)">
+            <summary>
+            Adquiere un agricultor por su email.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.IsEmailInUseAsync(System.Int32,System.String)">
+            <summary>
+            Verifica si un e-mail está en uso por algún otro agricultor.
+            Se debe indicar el Id del agricultor que se debe ignorar para la comprobación.
+            Esto sirve para que se permita guardar el mismo e-mail del agricultor que se quiere modificar.
+            La razón es que normalmente la modificación de un agricultor solo se hara de alguna de sus propiedades.
+            </summary>
+            <param name="personId"></param>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetByIdAsync(System.Int32)">
+            <summary>
+            Adquiere un agricultor por su Id
+            </summary>
+            <param name="farmerId">Id del agricultor</param>
+            <returns>Agricultor o null si no se encuentra</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetHiringsByFarmerIdAsync(System.Int32)">
+            <summary>
+            Adquire un array de contrataciones de un agricultor por su id
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetHiringsByClientIdAsync(System.Int32)">
+            <summary>
+            Adquire todas las contrataciones de un agricutor realizadas por un cliente
+            </summary>
+            <param name="clientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetClientsByFarmerHiring(System.Int32)">
+            <summary>
+            Devuelve todos los clientes que tienen contratado a un agricultor por su ID
+            </summary>
+            <param name="farmerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetHiringDto(AgrajaBackend.Models.FarmerHiring)">
+            <summary>
+            Adquire un dto de contratación por modelo FarmerHiring
+            </summary>
+            <param name="hiring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetHiringsDtos(AgrajaBackend.Models.Client)">
+            <summary>
+            Devuelve todos los dtos de contrataciones de un cliente
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.RemoveHirings(AgrajaBackend.Models.FarmerHiring[])">
+            <summary>
+            Elimina contrataciones
+            </summary>
+            <param name="farmerHirings">Array de contrataciones</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.FarmersService.GetHiringById(System.Int32)">
+            <summary>
+            Adquire una contratación por su Id
+            </summary>
+            <param name="hiringId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.PayOptionsService">
+            <summary>
+            Servicion de opciones de pago
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.PayOptionsService.#ctor(AgrajaBackend.AppDbContext)">
+            <summary>
+            Constructor de servicio de opciones de pago.
+            </summary>
+            <param name="appDbContext">Se inyecta dbContext</param>
+        </member>
+        <member name="M:AgrajaBackend.Services.PayOptionsService.GetAllAsync">
+            <summary>
+            Obtiene todas las opciones de compra
+            </summary>
+            <returns>Un array con todas las opciones de compra</returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.PayOptionsService.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtiene una opción de compra por su Id
+            </summary>
+            <param name="payOptionId">Id de opción de compra</param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Services.UserService">
+            <summary>
+            Servicio de usuarios
+            </summary>
+        </member>
+        <member name="P:AgrajaBackend.Services.UserService.ConfigPendig">
+            <summary>
+            Devuelve true si es la configuración por defecto y require de una actualízación de las contraseñas
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.#ctor(AgrajaBackend.Services.Contracts.ICriptoService,AgrajaBackend.AppDbContext,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{AgrajaBackend.Services.UserService})">
+            <summary>
+            Constructor de dervicio de usuarios
+            </summary>
+            <param name="cpriptoService"></param>
+            <param name="context"></param>
+            <param name="config"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.InitializeDefaultUsers">
+            <summary>
+            Inicializa los usuarios por defecto con sus contraseñas por defecto.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.AddAsync(AgrajaBackend.Models.User)">
+            <summary>
+            Añade un nuevo usuario (no implementado)
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.GetAllAsync">
+            <summary>
+            Adquiere todos los usuarios (no implementado)
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.UpdateAsync(AgrajaBackend.Models.User)">
+            <summary>
+            Actualizar un usuario (no implementado)
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.GetUserTokenAsync(AgrajaBackend.DTOs.User.UserLoginRequestDto)">
+            <summary>
+            Adquiere de manera asíncrona el token de un usuario válido
+            </summary>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.UpdateUserPasswordAsync(AgrajaBackend.DTOs.User.UserNewPasswordRequestDto)">
+            <summary>
+            Actualiza la contraseña de un usuario
+            </summary>
+            <param name="userNewPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.RefreshTokenAsync(AgrajaBackend.DTOs.JwtToken.JwtTokenDto)">
+            <summary>
+            Refresca los tokens. Utilizar cuando caducan para refrescar los tokens y no pedir credenciales nuevamente.
+            </summary>
+            <param name="jwtToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgrajaBackend.Services.UserService.RevokeAsync(System.String)">
+            <summary>
+            Revoca los tokens de un usuario
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Utils.Dni">
+            <summary>
+            Utilidades para DNI
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Utils.Dni.IsValid(System.String)">
+            <summary>
+            Comprueba si un DNI indicado tiene el formato correcto
+            </summary>
+            <param name="DNI">DNI que se quiere comprobar</param>
+            <returns>True si el DNI es correcto</returns>
+        </member>
+        <member name="T:AgrajaBackend.Utils.Email">
+            <summary>
+            Utilidades de e-mail
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Utils.Email.IsValid(System.String)">
+            <summary>
+            Comprueba si un correo es válido
+            </summary>
+            <param name="email">e-mail para comprobar</param>
+            <returns></returns>
+        </member>
+        <member name="T:AgrajaBackend.Utils.Telephone">
+            <summary>
+            Utilidades para teléfonos
+            </summary>
+        </member>
+        <member name="M:AgrajaBackend.Utils.Telephone.IsValid(System.String)">
+            <summary>
+            Comprueba si un número de teléfono es correcto
+            </summary>
+            <param name="phoneNumber">Número de teléfono para comprobar</param>
+            <returns>True si el número tiene el formato correcto</returns>
+        </member>
+    </members>
+</doc>
