@@ -26,6 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="scripts\mssql.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>scripts</CustomToolNamespace>
+    </None>
+    <None Update="scripts\MSSQL_agraja.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="scripts\mysql.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>scripts</CustomToolNamespace>
