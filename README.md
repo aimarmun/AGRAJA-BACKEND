@@ -1,8 +1,10 @@
 # AGRAJA-BACKEND: API para la contratación de agricultores y venta de cajas de productos
 
-Agraja es mi proyecto de final de Bootcamp Fullstack.
+Agraja es mi proyecto de final de Bootcamp Fullstack y esta es la parte backend, puedes ver la parte fonted desde aquí 👉 https://github.com/aimarmun/AGRAJA-FRONT.
+Se trata de una aplicación pensada para el administrador de una cooperativa de agricultura ecológica. 
+El administrador o vendedor puede hacer ventas de cajas de productos o puede hacer contrataciones de agricultores con clientes.
 
-Puedes verlo en acción aquí 👉 https://demo.aimarmun.com
+Puedes ver una demo de Agraja en acción desde aquí 👉 https://demo.aimarmun.com
 
 ###### Características:
 
