@@ -4,8 +4,7 @@ Agraja es mi proyecto de final de Bootcamp Fullstack y esta es la parte backend,
 Se trata de una aplicación pensada para el administrador de una cooperativa de agricultura ecológica. 
 El administrador o vendedor puede hacer ventas de cajas de productos o puede hacer contrataciones de agricultores con clientes.
 
-Puedes ver una demo de Agraja en acción desde aquí 👉 https://demo.aimarmun.com
-
+Puedes ver una demo de Agraja en acción desde aquí 👉 [https://slit4.me](https://slit4.me/hdfdc)
 ###### Características:
 
 - Agraja Backend es una API para una aplicación que permite la contratación de agricultores y la venta de cajas de productos del campo. 
